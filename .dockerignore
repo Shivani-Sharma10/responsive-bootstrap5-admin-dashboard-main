@@ -1,0 +1,11 @@
+**/*~
+**/.DS_Store
+**/.git
+**/.gitignore
+**/README.md
+**/node_modules
+**/dist
+.editorconfig
+.dockerignore
+LICENSE.txt
+Dockerfile

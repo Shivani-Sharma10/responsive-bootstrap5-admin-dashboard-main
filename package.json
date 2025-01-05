@@ -1,0 +1,51 @@
+{
+  "name": "@newsdash/server",
+  "description": "Server for newsdash",
+  "version": "0.0.0",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "type": "module",
+  "author": {
+    "name": "buzz",
+    "url": "https://github.com/buzz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buzz/newsdash.git",
+    "directory": "packages/server"
+  },
+  "scripts": {
+    "build": "tsc --outDir dist --project .",
+    "dev": "nodemon --exec tsx src/startServer.ts",
+    "start": "NODE_ENV=production node dist/startServer.js",
+    "typecheck": "tsc --noEmit --project ."
+  },
+  "imports": {
+    "#api/*": "./dist/api/*",
+    "#constants": "./dist/constants.js",
+    "#redis": "./dist/redis/redis.js",
+    "#schema": "./dist/schema.js"
+  },
+  "dependencies": {
+    "@fastify/error": "^4.0.0",
+    "@fastify/redis": "^6.2.0",
+    "@newsdash/common": "link:../common",
+    "decode-ico": "^0.4.1",
+    "fastify": "^4.28.1",
+    "ky": "^1.4.0",
+    "metascraper": "^5.45.19",
+    "metascraper-image": "^5.45.10",
+    "metascraper-logo": "^5.45.10",
+    "metascraper-logo-favicon": "^5.45.21",
+    "metascraper-youtube": "^5.45.17",
+    "rss-parser": "^3.13.0",
+    "sharp": "^0.33.4",
+    "string-strip-html": "^13.4.8",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "pino-pretty": "^11.2.1",
+    "tsx": "^4.16.2"
+  }
+}
